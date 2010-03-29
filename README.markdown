@@ -2,7 +2,8 @@
 
 ## Introduction
 nFormEmbedPlugin is a [symfony](http://symfony-project.org/) 1.3/1.4 plugin. Created to ease the embedding and saving of related [Doctrine](http://doctrine-project.org) 1.2 forms.
-It key points are
+It's key points are
+
  *  Plain & Easy
  *  embedRelationAndCreate('RelationName');
  *  easy i18n embedding. Just supply the languages.
