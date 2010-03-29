@@ -1,7 +1,7 @@
 # nFormEmbedPlugin
 
 ## Introduction
-nFormEmbedPlugin is a [symfony](http://symfony-project.org/) 1.3/1.4 plugin. Created to ease the embedding and saving of related [Doctrine](http://doctrine-project.org) 1.2 forms.
+nFormEmbedPlugin is a [Symfony](http://symfony-project.org/) 1.3/1.4 plugin. Created to ease the embedding and saving of related [Doctrine](http://doctrine-project.org) 1.2 forms.
 It's key points are
 
  *  Plain & Easy
@@ -21,6 +21,7 @@ becomes:
     ...
 
 ## Usage
+### Embed a form
 In the setup() or configure() method of a form call $this->embedRelationAndCreate('RelationName'); that's all.
 Suppose we have a Doctrine model Author and a model Book. An Author has one or more Books. 
 
@@ -48,6 +49,15 @@ In the Author form we call the embedRelationAndCreate() method. This creates a s
         
         $this->embedRelationAndCreate('Books');
       }
+
+### Embed i18n
+On any form with i18n fields, just call embedI18n(cultures); The i18n subforms will be included and saved.
+Example:
+    $form = new BookForm();
+    $form->embedI18n(array('en', 'nl'));
+    
+
+    
 
 ## Known limitations
 
