@@ -2,10 +2,12 @@
 
 ## Introduction
 nFormEmbedPlugin is a [symfony](http://symfony-project.org/) 1.3/1.4 plugin. Created to ease the embedding and saving of related [Doctrine](http://doctrine-project.org) 1.2 forms.
+
 It key points are
- *  embedRelationAndCreate('RelationName');
- *  easy i18n embedding. Just supply the languages.
- *  Plain & Easy
+ * Plain & Easy
+ * embedRelationAndCreate('RelationName');
+ * easy i18n embedding. Just supply the languages.
+
 
 ## Setup
 Extend nBaseEmbedForm from your BaseFormDoctrine.
@@ -21,7 +23,7 @@ becomes:
 ## Usage
 In the setup() or configure() method of a form call $this->embedRelationAndCreate('RelationName'); that's all.
 
-Suppose we have a Doctrine model Author and a model Book.
+Suppose we have a Doctrine model Author and a model Book. An Author has one or more Books. 
 
     --- schema.yml
     Author:
@@ -38,7 +40,8 @@ Suppose we have a Doctrine model Author and a model Book.
           foreignAlias: Books
 
 ![Diagram](http://yuml.me/diagram/scruffy/class/[Author]1-0...*[Book])
-An Author has one or more Books. In the Author form we call the embedRelationAndCreate method. This creates a subform with all the related books and a possibility to add new books.
+
+In the Author form we call the embedRelationAndCreate method. This creates a subform with all the related books and a possibility to add new books.
 
     class AuthorForm extends BaseAuthorForm {
       public function configure() {
@@ -54,8 +57,8 @@ An Author has one or more Books. In the Author form we call the embedRelationAnd
  *  A bit more testing with multi-part forms is needed. Not sure if the uploaded file is correctly saved. Just create a bug report.
 
 ## Credits
- *  Nathan Bijnens (Servs)
- *  Erik Van Kelst (4levels)
+ *  [Nathan Bijnens](http://twitter.com/nathan_gs) ([Servs](http://servs.eu))
+ *  Erik Van Kelst ([4levels](http://4levels.org))
  
 ## License
-This work is published under the [Symfony License](http://www.symfony-project.org/license)
+This work is published under the [Symfony License](http://www.symfony-project.org/license).
